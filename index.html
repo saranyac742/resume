@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saranya C | Computer Science Graduate</title>
+<meta name="description" content="Portfolio of Saranya C, B.E. Computer Science graduate.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FFF8F9; --blush:#FBE3E9; --petal:#F4A9BC; --rose:#D95F83; --plum:#4A2438; --bark:#6B4545; --muted:#7D5B66;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--sans);background:var(--ivory);color:var(--plum);line-height:1.7;font-size:1.05rem}
+a{color:var(--rose)}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:4px}
+
+nav{position:sticky;top:0;z-index:5;display:flex;justify-content:center;gap:clamp(.9rem,3vw,2.2rem);padding:.9rem 1rem;background:rgba(255,248,249,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--blush);flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--bark);font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--rose)}
+
+.hero{position:relative;min-height:88vh;display:grid;place-items:center;text-align:center;padding:4rem 1.5rem;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 0%,var(--blush) 0%,var(--ivory) 70%)}
+#petals{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.branch{position:absolute;top:0;right:0;width:min(46vw,420px);opacity:.95;pointer-events:none}
+.hero-inner{position:relative;max-width:46rem}
+.hero p.hi{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--rose)}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(3.4rem,11vw,7rem);line-height:1;margin:.4rem 0 1rem;letter-spacing:-.01em}
+.hero p.role{font-size:1.2rem;color:var(--bark);max-width:34rem;margin:0 auto 2rem}
+.btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:600;border:2px solid var(--rose);transition:background .2s,color .2s}
+.btn.fill{background:var(--rose);color:#fff}
+.btn.fill:hover{background:var(--plum);border-color:var(--plum)}
+.btn.line{color:var(--rose)}
+.btn.line:hover{background:var(--blush)}
+
+section{padding:5rem 1.5rem}
+.wrap{max-width:52rem;margin:0 auto}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,2.8rem);margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem}
+h2::before{content:"";width:.9em;height:.9em;flex:none;background:var(--petal);border-radius:60% 0 60% 0;transform:rotate(-20deg)}
+.alt{background:var(--blush)}
+
+.about p{max-width:40rem;font-size:1.15rem}
+.about p+p{margin-top:1rem}
+
+.timeline{list-style:none;padding:0;margin-left:.6rem;border-left:2px solid var(--petal)}
+.timeline li{position:relative;padding:0 0 2.2rem 2rem}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-.62rem;top:.45rem;width:1.05rem;height:1.05rem;background:var(--rose);border:3px solid var(--blush);border-radius:50%}
+.timeline h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1.25}
+.timeline .yr{display:inline-block;background:#fff;color:var(--rose);font-weight:600;border-radius:999px;padding:.05rem .8rem;font-size:.9rem;margin:.3rem 0}
+.timeline p{color:var(--bark)}
+.score{font-family:var(--serif);font-size:1.3rem;color:var(--plum);font-weight:600}
+
+.grid{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.card{background:#fff;border:1px solid var(--blush);border-radius:1.6rem 0.4rem 1.6rem 0.4rem;padding:1.6rem}
+.card h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:.4rem}
+.card p{color:var(--bark);font-size:1rem}
+
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0}
+.chips li{background:#fff;border:1px solid var(--petal);border-radius:999px;padding:.35rem 1.1rem;font-weight:600;color:var(--bark)}
+
+.contact{text-align:center}
+.contact h2{justify-content:center}
+.contact p{max-width:32rem;margin:0 auto 1.8rem;color:var(--bark)}
+footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.9rem;background:var(--plum);color:#f6d9e1}
+
+@media (max-width:600px){.branch{width:62vw;opacity:.7}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#strengths">Strengths</a><a href="#contact">Contact</a>
+</nav>
+
+<header class="hero" id="home">
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <svg class="branch" viewBox="0 0 420 300" aria-hidden="true">
+    <path d="M430 10 C 340 40, 280 80, 210 150 S 90 240, 20 270" fill="none" stroke="#6B4545" stroke-width="9" stroke-linecap="round"/>
+    <path d="M300 62 C 290 110, 270 130, 250 150" fill="none" stroke="#6B4545" stroke-width="5" stroke-linecap="round"/>
+    <path d="M215 148 C 200 190, 170 210, 150 225" fill="none" stroke="#6B4545" stroke-width="5" stroke-linecap="round"/>
+    <path d="M370 24 C 380 -10, 400 -10, 410 10" fill="none" stroke="#6B4545" stroke-width="4" stroke-linecap="round"/>
+    <defs>
+      <g id="b">
+        <ellipse cx="0" cy="-11" rx="7" ry="11" fill="#F7B8C8"/>
+        <ellipse cx="0" cy="-11" rx="7" ry="11" fill="#F4A9BC" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-11" rx="7" ry="11" fill="#F7B8C8" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-11" rx="7" ry="11" fill="#F4A9BC" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-11" rx="7" ry="11" fill="#F7B8C8" transform="rotate(288)"/>
+        <circle r="3.2" fill="#D95F83"/>
+      </g>
+    </defs>
+    <use href="#b" x="300" y="62" transform="scale(1.5)" style="transform-origin:300px 62px"/>
+    <use href="#b" x="250" y="150" transform="scale(1.6)" style="transform-origin:250px 150px"/>
+    <use href="#b" x="150" y="225" transform="scale(1.4)" style="transform-origin:150px 225px"/>
+    <use href="#b" x="345" y="42" transform="scale(1.1)" style="transform-origin:345px 42px"/>
+    <use href="#b" x="210" y="115" transform="scale(1.2)" style="transform-origin:210px 115px"/>
+    <use href="#b" x="95" y="250" transform="scale(1.1)" style="transform-origin:95px 250px"/>
+    <use href="#b" x="395" y="8" transform="scale(1.2)" style="transform-origin:395px 8px"/>
+    <use href="#b" x="180" y="190" transform="scale(1)" style="transform-origin:180px 190px"/>
+  </svg>
+  <div class="hero-inner">
+    <p class="hi">Hello, I'm</p>
+    <h1>Saranya C</h1>
+    <p class="role">Computer Science graduate, eager to start a career in technology and to keep learning every day.</p>
+    <div class="btns">
+      <a class="btn fill" href="#contact">Get in touch</a>
+      <a class="btn line" href="#education">See my education</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <p>I hold a B.E. in Computer Science and I'm looking for a challenging role where I can apply my technical and analytical skills for the good of the team and the company.</p>
+    <p>I'm a fresher, and proud of it: I'm a quick, curious learner who is happy to pick up whatever skills the job needs. Outside of work, I like stitching and drawing, which keeps me patient and detail-minded.</p>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <h2>Education</h2>
+    <ul class="timeline">
+      <li>
+        <h3>B.E. Computer Science</h3>
+        <span class="yr">2016</span>
+        <p>Dr. Sivanthi Aditanar College of Engineering, Tiruchendur</p>
+        <p class="score">CGPA 8.1</p>
+      </li>
+      <li>
+        <h3>Class XII</h3>
+        <span class="yr">2012</span>
+        <p>Sri Jayendra Swamigal Silver Jubilee Matriculation Higher Secondary School, Tirunelveli</p>
+        <p class="score">91%</p>
+      </li>
+      <li>
+        <h3>Class X</h3>
+        <span class="yr">2010</span>
+        <p>Sri Jayendra Swamigal Silver Jubilee Matriculation Higher Secondary School, Tirunelveli</p>
+        <p class="score">91.2%</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="strengths">
+  <div class="wrap">
+    <h2>Strengths and interests</h2>
+    <div class="grid">
+      <div class="card"><h3>Patience</h3><p>I stay calm and steady with tough problems and with people.</p></div>
+      <div class="card"><h3>Team management</h3><p>I enjoy guiding a group so everyone can do their best work.</p></div>
+      <div class="card"><h3>Ambition</h3><p>I set high goals and keep learning to reach them.</p></div>
+    </div>
+    <h2 style="margin-top:3rem">Languages</h2>
+    <ul class="chips" aria-label="Languages"><li>English: read, write, speak</li><li>Tamil: read, write, speak</li></ul>
+    <h2 style="margin-top:3rem">Hobbies</h2>
+    <ul class="chips" aria-label="Hobbies"><li>Stitching</li><li>Drawing</li></ul>
+  </div>
+</section>
+
+<section id="contact" class="alt contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I'm open to fresher roles and learning opportunities. Send me a message or give me a call.</p>
+    <div class="btns">
+      <a class="btn fill" href="mailto:Saranyac742@gmail.com">Email me</a>
+      <a class="btn line" href="tel:+919080380890">Call 90803 80890</a>
+    </div>
+  </div>
+</section>
+
+<footer>Saranya C &middot; Chennai, India</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('petals'),x=c.getContext('2d'),W,H,P=[];
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cols=['#F7B8C8','#F4A9BC','#FBD3DD','#EE8FAA'];
+  function size(){var r=c.parentNode.getBoundingClientRect();W=c.width=r.width;H=c.height=r.height}
+  function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:-20,s:6+Math.random()*9,vy:.5+Math.random()*.9,vx:-.3+Math.random()*.9,
+    r:Math.random()*6.28,vr:(Math.random()-.5)*.03,sw:Math.random()*6.28,col:cols[Math.floor(Math.random()*cols.length)]}}
+  function draw(p){x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.col;x.globalAlpha=.85;
+    x.beginPath();x.moveTo(0,-p.s);x.bezierCurveTo(p.s,-p.s*.8,p.s*.8,p.s*.8,0,p.s);x.bezierCurveTo(-p.s*.8,p.s*.8,-p.s,-p.s*.8,0,-p.s);
+    x.fill();x.restore()}
+  function init(){size();P=[];var n=Math.min(40,Math.floor(W/32));for(var i=0;i<n;i++)P.push(mk(true))}
+  function tick(){x.clearRect(0,0,W,H);
+    P.forEach(function(p,i){p.sw+=.02;p.x+=p.vx+Math.sin(p.sw)*.5;p.y+=p.vy;p.r+=p.vr;
+      if(p.y>H+20||p.x>W+30){P[i]=mk(false)}draw(p)});
+    requestAnimationFrame(tick)}
+  init();
+  window.addEventListener('resize',function(){size()});
+  if(reduce){P.forEach(draw)}else{tick()}
+})();
+</script>
+</body>
+</html>
